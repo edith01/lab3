@@ -19,7 +19,7 @@ stage('Cloning Repo and generating Startup script and moving file to bucket') {
                 sh 'cd lab3'
                 sh 'pwd'
                 
-                sh "gcloud compute ssh  imranc42@instance-1 --zone=us-central1-a --command 'sudo rm -f /var/www/html/* ;sudo mv /var/lib/jenkins/workspace/lab3/lab3/* /var/www/html/'"
+                sh "gcloud compute ssh  imranc42@instance-1 --zone=us-central1-a --command 'sudo rm -rf /var/www/html/* ;sudo mv /var/lib/jenkins/workspace/lab3/lab3/* /var/www/html/'"
 
                 
             }
