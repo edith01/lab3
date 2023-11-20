@@ -14,19 +14,12 @@ stage('Cloning Repo and generating Startup script and moving file to bucket') {
                 sh "gcloud compute ssh  imranc42@instance-1 --zone=us-central1-a --command 'sudo apt install apache2 -y'"
             }
         }
-        stage('Moving to production') {
+        stage('Moving to production & Deploying') {
             steps {
-                sh 'cd lab3'
-                sh 'pwd'
-                
+   
                 sh "gcloud compute ssh  imranc42@instance-1 --zone=us-central1-a --command 'sudo rm -rf /var/www/html/* ;sudo mv /var/lib/jenkins/workspace/lab3/lab3/* /var/www/html/'"
 
                 
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
             }
         }
     }
