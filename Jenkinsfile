@@ -21,6 +21,13 @@ stage('Cloning Repo and generating Startup script and moving file to bucket') {
 
                 
             }
+        stage('Testing') {
+            steps {
+   
+                sh "curl http://35.224.13.190:80/"
+
+                
+            }
         }
     }
 }
