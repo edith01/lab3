@@ -20,10 +20,10 @@ pipeline {
         sh "gcloud compute ssh  imranc42@instance-1 --zone=us-central1-a --command 'sudo rm -rf /var/www/html/* ;sudo mv /var/lib/jenkins/workspace/lab3/lab3/* /var/www/html/'"
 
       }
-      stage('Deploy') {
-        steps {
-          echo 'Deploying....'
-        }
+    }
+    stage('Deploy') {
+      steps {
+        echo 'Deploying....'
       }
     }
   }
