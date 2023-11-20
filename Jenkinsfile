@@ -21,9 +21,9 @@ stage('Cloning Repo and generating Startup script and moving file to bucket') {
 
                 
             }
-    stage('Testing') {
+           stage('Deploy') {
             steps {
-                echo 'Testing'
+                echo 'Deploying....'
             }
         }
     }
