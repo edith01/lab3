@@ -14,7 +14,7 @@ stage('Cloning Repo and generating Startup script and moving file to bucket') {
                 sh "gcloud compute ssh  imranc42@instance-1 --zone=us-central1-a --command 'sudo apt install apache2 -y'"
             }
         }
-        stage('Moving to production') {
+        stage('Moving to production and deploying') {
             steps {
                 sh 'cd lab3'
                 sh 'pwd'
@@ -24,9 +24,10 @@ stage('Cloning Repo and generating Startup script and moving file to bucket') {
                 
             }
         }
-        stage('Deploy') {
+        stage('Testing') {
             steps {
                 echo 'Deploying....'
+                sh 'curl http://35.224.13.190/'
             }
         }
     }
